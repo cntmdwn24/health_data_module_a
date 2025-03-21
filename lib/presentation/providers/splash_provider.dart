@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_data_module_a/presentation/screens/sign_in_screen.dart';
+import '../screens/sign_up_screen.dart';
 
 final splashProvider = SplashProvider();
 
@@ -13,10 +14,11 @@ class SplashProvider extends ChangeNotifier {
     await Future.delayed(const Duration(seconds: 1));
     animationLogo = true;
     notifyListeners();
-    await Future.delayed(const Duration(seconds: 1, milliseconds: 500));
+    await Future.delayed(const Duration(seconds: 1));
 
-    Navigator.of(
+    Navigator.pushReplacement(
       context,
-    ).pushReplacement(MaterialPageRoute(builder: (context) => SignInScreen()));
+      MaterialPageRoute(builder: (context) => SignUpScreen()),
+    );
   }
 }

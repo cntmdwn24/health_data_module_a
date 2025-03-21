@@ -43,7 +43,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 width: MediaQuery.sizeOf(context).width * 0.39,
               ),
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
             AnimatedOpacity(
               duration: const Duration(seconds: 1),
               opacity: splashProvider.animationLogo ? 1 : 0,
