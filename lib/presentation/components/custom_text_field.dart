@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
@@ -10,6 +11,8 @@ class CustomTextField extends StatelessWidget {
   final String hint;
   final String svgName;
   final bool isSvg;
+  final bool isPassword;
+  final controller;
 
   const CustomTextField({
     super.key,
@@ -18,6 +21,8 @@ class CustomTextField extends StatelessWidget {
     required this.suffixText,
     this.svgName = '',
     this.isSvg = false,
+    this.isPassword = false,
+    this.controller,
   });
 
   @override
@@ -28,6 +33,8 @@ class CustomTextField extends StatelessWidget {
         width: 370,
         height: 70,
         child: TextField(
+          controller: controller,
+          obscureText: isPassword ? true : false,
           decoration: InputDecoration(
             prefixIcon:
                 isSvg

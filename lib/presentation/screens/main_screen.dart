@@ -33,49 +33,62 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: signInScreenInButtonColor,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-        onTap: _onTap,
-        currentIndex: _currentIndex,
-        items: [
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/home-1-svgrepo-com.svg',
-              width: 25,
-              height: 25,
-            ),
-            label: 'Home',
+      bottomNavigationBar: SizedBox(
+        height: 70,
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: signInScreenInButtonColor,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.grey,
+          selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 13,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/alarm-clock-svgrepo-com.svg',
-              width: 25,
-              height: 25,
-            ),
-            label: 'Alarm',
+          unselectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 13,
           ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/run-on-treadmill-exercise-work-out-run-svgrepo-com.svg',
-              width: 25,
-              height: 25,
+          onTap: _onTap,
+          currentIndex: _currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/icons/home-1-svgrepo-com.svg',
+                color: _currentIndex != 0 ? Colors.grey : Colors.white,
+                width: 25,
+                height: 25,
+              ),
+              label: 'Home',
             ),
-            label: 'Workout',
-          ),
-          BottomNavigationBarItem(
-            icon: SvgPicture.asset(
-              'assets/icons/user-svgrepo-com.svg',
-              width: 25,
-              height: 25,
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/icons/alarm-clock-svgrepo-com.svg',
+                color: _currentIndex != 1 ? Colors.grey : Colors.white,
+                width: 25,
+                height: 25,
+              ),
+              label: 'Alarm',
             ),
-            label: 'My Page',
-          ),
-        ],
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/icons/run-on-treadmill-exercise-work-out-run-svgrepo-com.svg',
+                color: _currentIndex != 2 ? Colors.grey : Colors.white,
+                width: 25,
+                height: 25,
+              ),
+              label: 'Workout',
+            ),
+            BottomNavigationBarItem(
+              icon: SvgPicture.asset(
+                'assets/icons/user-svgrepo-com.svg',
+                color: _currentIndex != 3 ? Colors.grey : Colors.white,
+                width: 25,
+                height: 25,
+              ),
+              label: 'My Page',
+            ),
+          ],
+        ),
       ),
     );
   }

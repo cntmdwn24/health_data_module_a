@@ -17,6 +17,6 @@ class SplashProvider extends ChangeNotifier {
 
     Navigator.of(
       context,
-    ).pushReplacement(MaterialPageRoute(builder: (context) => SigninScreen()));
+    ).pushReplacement(MaterialPageRoute(builder: (context) => SignInScreen()));
   }
 }

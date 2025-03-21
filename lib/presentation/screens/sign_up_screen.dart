@@ -8,8 +8,17 @@ import '../components/custom_button.dart';
 import '../components/custom_button_2.dart';
 import '../components/custom_text_field.dart';
 
-class SignUpScreen extends StatelessWidget {
+class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
+
+  @override
+  State<SignUpScreen> createState() => _SignUpScreenState();
+}
+
+class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +31,7 @@ class SignUpScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => SigninScreen()),
+                MaterialPageRoute(builder: (context) => SignInScreen()),
               );
             },
             icon: Icon(
@@ -57,24 +66,30 @@ class SignUpScreen extends StatelessWidget {
                 icon: Icons.person,
                 hint: 'UserID',
                 suffixText: '',
+                controller: _idController,
               ),
               SizedBox(height: 5),
               CustomTextField(
                 icon: Icons.badge_outlined,
                 hint: 'Username',
                 suffixText: '',
+                controller: _nameController,
               ),
               SizedBox(height: 5),
               CustomTextField(
                 icon: Icons.lock,
                 hint: 'Password',
                 suffixText: '',
+                isPassword: true,
+                controller: _passwordController,
               ),
               SizedBox(height: 5),
               CustomTextField(
                 icon: Icons.lock_reset,
                 hint: 'Confirm Password',
                 suffixText: '',
+                isPassword: true,
+                controller: _passwordController,
               ),
               SizedBox(height: 20),
               CustomButton(
@@ -94,7 +109,7 @@ class SignUpScreen extends StatelessWidget {
                       textColor: Colors.black,
                       buttonColor: Colors.white,
                       isOutline: false,
-                      screen: () => SigninScreen(),
+                      screen: () => SignInScreen(),
                     ),
                     SizedBox(height: 15),
                     CustomButton2(

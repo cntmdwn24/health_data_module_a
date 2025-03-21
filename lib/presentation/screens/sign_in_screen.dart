@@ -1,15 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:health_data_module_a/common/colors.dart';
 import 'package:health_data_module_a/presentation/screens/main_screen.dart';
-import 'package:health_data_module_a/presentation/screens/profile_and_target_screen.dart';
 import 'package:health_data_module_a/presentation/screens/sign_up_screen.dart';
 import 'package:health_data_module_a/presentation/screens/splash_screen.dart';
 import '../components/custom_button.dart';
 import '../components/custom_button_2.dart';
 import '../components/custom_text_field.dart';
+import 'package:http/http.dart' as http;
 
-class SigninScreen extends StatelessWidget {
-  const SigninScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
+
+  @override
+  State<SignInScreen> createState() => _SigninScreenState();
+}
+
+class _SigninScreenState extends State<SignInScreen> {
+  final TextEditingController _idController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  Future<void> login() async {
+    final String id = _idController.text;
+    final String password = _passwordController.text;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,12 +65,15 @@ class SigninScreen extends StatelessWidget {
                 icon: Icons.person,
                 hint: 'Username',
                 suffixText: '',
+                controller: _idController,
               ),
               SizedBox(height: 10),
               CustomTextField(
                 icon: Icons.lock,
                 hint: 'Password',
                 suffixText: '',
+                isPassword: true,
+                controller: _passwordController,
               ),
               SizedBox(height: 20),
               CustomButton(text: 'Sign In', screen: () => MainScreen()),
