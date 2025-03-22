@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:health_data_module_a/common/colors.dart';
-import 'package:health_data_module_a/presentation/screens/main_screen.dart';
+import 'package:health_data_module_a/presentation/screens/profile_and_target_screen.dart';
 import 'package:health_data_module_a/presentation/screens/sign_up_screen.dart';
 import 'package:health_data_module_a/presentation/screens/splash_screen.dart';
 import '../components/custom_button.dart';
@@ -76,7 +76,10 @@ class _SigninScreenState extends State<SignInScreen> {
                 controller: _passwordController,
               ),
               SizedBox(height: 20),
-              CustomButton(text: 'Sign In', screen: () => MainScreen()),
+              CustomButton(
+                text: 'Sign In',
+                screen: () => ProfileAndTargetScreen(),
+              ),
               SizedBox(height: 30),
               Container(
                 width: double.infinity,

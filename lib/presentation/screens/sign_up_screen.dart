@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:health_data_module_a/common/colors.dart';
-import 'package:health_data_module_a/presentation/screens/main_screen.dart';
 import 'package:health_data_module_a/presentation/screens/profile_and_target_screen.dart';
 import 'package:health_data_module_a/presentation/screens/sign_in_screen.dart';
 import 'package:health_data_module_a/presentation/screens/splash_screen.dart';

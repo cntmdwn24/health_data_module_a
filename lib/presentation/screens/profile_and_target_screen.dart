@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:health_data_module_a/common/colors.dart';
 import 'package:health_data_module_a/presentation/components/custom_button.dart';
 import 'package:health_data_module_a/presentation/components/custom_gender_button.dart';
+import 'package:health_data_module_a/presentation/screens/main_screen.dart';
 import 'package:health_data_module_a/presentation/screens/splash_screen.dart';
 import '../components/custom_text_field.dart';
 
@@ -124,7 +124,7 @@ class ProfileAndTargetScreen extends StatelessWidget {
                 suffixText: 'ml',
                 controller: '',
               ),
-              CustomButton(text: 'Complete', screen: () => SplashScreen()),
+              CustomButton(text: 'Complete', screen: () => MainScreen()),
               SizedBox(height: 30),
             ],
           ),
