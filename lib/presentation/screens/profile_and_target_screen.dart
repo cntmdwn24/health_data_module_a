@@ -6,9 +6,14 @@ import 'package:health_data_module_a/presentation/screens/main_screen.dart';
 import 'package:health_data_module_a/presentation/screens/splash_screen.dart';
 import '../components/custom_text_field.dart';
 
-class ProfileAndTargetScreen extends StatelessWidget {
+class ProfileAndTargetScreen extends StatefulWidget {
   const ProfileAndTargetScreen({super.key});
 
+  @override
+  State<ProfileAndTargetScreen> createState() => _ProfileAndTargetScreenState();
+}
+
+class _ProfileAndTargetScreenState extends State<ProfileAndTargetScreen> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(

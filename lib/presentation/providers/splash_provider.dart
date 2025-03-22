@@ -8,6 +8,7 @@ class SplashProvider extends ChangeNotifier {
   bool animationSimbol = false;
 
   void animationSplash(BuildContext context) async {
+    await Future.delayed(const Duration(seconds: 1));
     animationSimbol = true;
     notifyListeners();
     await Future.delayed(const Duration(seconds: 1));
